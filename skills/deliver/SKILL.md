@@ -7,6 +7,8 @@ description: Prepare coherent commits, pull requests, and delivery summaries, ch
 
 Determine the requested step: preparation, commit, push, PR publication, merge, release, or deployment. Act within existing authorization and repository policy without requesting permissions already granted.
 
+When delivery needs multiple dependent PRs, the optional stacked-delivery skill can handle topology and restacking while this skill supplies the ordinary delivery checks. Keep a single PR when splitting adds no value; neither skill is a required prerequisite for the other.
+
 ## Prepare
 
 - Retrieve relevant Engram decisions and ticket references. Inspect status, actual diff, base branch, and existing PRs. Preserve unrelated user work and stage only intended changes.

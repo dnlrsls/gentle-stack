@@ -1,6 +1,6 @@
 # Gentle Stack
 
-Eight agent-agnostic, on-demand skills for a software factory, with Engram as its persistent memory.
+Eleven agent-agnostic, on-demand skills for a software factory, with Engram as its persistent memory.
 
 ## Vision
 
@@ -18,7 +18,7 @@ Each skill should have a clear responsibility, explicit instructions, and the su
 
 ## Project status
 
-The v0.2 iteration of eight instruction-based skills is available, with shared work context, consolidated memory ownership, ticket completion rules, and optional reproducible candidate helpers. They are adapted workflows, not a drop-in replacement for Gentle AI's native RDD engine. See the [evaluation record](evaluations/v0.2.md) for observed results and limits. Cross-agent evaluation is still pending; v0.2 is an iteration label, not a packaged release.
+Eleven instruction-based skills are available, including skill improvement, technical documentation, and stacked delivery. They share compact work context, consolidated memory ownership, and ticket completion rules, with optional reproducible candidate helpers for review and verification. They are adapted workflows, not a drop-in replacement for Gentle AI's native RDD engine. The [v0.2 evaluation record](evaluations/v0.2.md) covers the original eight skills and helper checks; behavioral evaluation of the three additions and cross-agent evaluation remain pending. Iteration labels do not imply packaged releases.
 
 ## Skills
 
@@ -32,6 +32,9 @@ The v0.2 iteration of eight instruction-based skills is available, with shared w
 | [handoff](skills/handoff/SKILL.md) | Transfer bounded work with faithful requirements. |
 | [continuity](skills/continuity/SKILL.md) | Save, recover, and reconcile context through Engram. |
 | [deliver](skills/deliver/SKILL.md) | Prepare commits, pull requests, and delivery evidence. |
+| [skill-improve](skills/skill-improve/SKILL.md) | Evaluate existing skills and improve them from observed failures. |
+| [technical-docs](skills/technical-docs/SKILL.md) | Write and validate documentation for a defined reader and task. |
+| [stacked-delivery](skills/stacked-delivery/SKILL.md) | Plan and maintain dependent PRs with per-layer evidence. |
 
 ## Installation and prerequisites
 
@@ -68,6 +71,24 @@ Expected output: an implemented change, observed checks, and explicit remaining 
 ### Resume work
 
 > Use continuity to recover the payments refactor from Engram. Reconcile memory with Git and the tickets. Report the next actionable unit without changing code yet.
+
+### Improve a skill
+
+> Use skill-improve to audit work-breakdown. In this failed run, it split tests from implementation and produced tickets that could not be completed independently. Propose focused improvements and evaluation cases. Keep this request audit-only.
+
+Expected output: evidence-backed findings and proposed changes, distinguishing a walkthrough from an executed evaluation. Editing, installing, and publishing remain separate actions unless authorized.
+
+### Document a module
+
+> Use technical-docs to update the payments guide for developers integrating this module. Inspect the current implementation, explain its contracts and rounding behavior, and validate safe examples. Reuse the existing documentation structure and save significant decisions in Engram.
+
+### Prepare a PR stack
+
+> Use stacked-delivery to plan two dependent PRs for the payments refactor: extract the fee helper, then migrate refund_fee. Identify each branch base, acceptance checks, and integration order. Return the plan without creating branches or publishing PRs.
+
+For actual publication, explicitly request the desired actions, for example:
+
+> Create the planned local branches and publish both as draft PRs. Link their dependencies and validate each layer. Do not merge or rewrite existing published history.
 
 ## Composition and sources of truth
 
