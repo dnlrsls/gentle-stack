@@ -13,6 +13,8 @@ Read requirements, relevant Engram decisions, and verification evidence. Record 
 
 Use an available read-only snapshot or isolated view when practical. Otherwise compare candidate identity before and after review. If identity cannot be established, disclose that the review is not version-bound.
 
+For a reproducible Git candidate, use the optional bundled helper: `python <skill-directory>/scripts/candidate.py --repo <project-directory> --base <review-base>`. Resolve the base once and reuse its returned full commit ID for later comparisons. See [candidate limitations](references/candidate.md) when invoking the helper or choosing an equivalent tool. Python 3 and Git are helper dependencies, not requirements for reading this skill.
+
 ## Review
 
 Choose relevant lenses based on concrete risks and the requested scope:
@@ -30,4 +32,8 @@ Keep review read-only unless corrections are authorized. If they are, bound them
 
 Return candidate identity, scope and lenses, evidence, findings, gaps, and reviewer provenance. Distinguish self-review from actual independent review. Recheck candidate identity; mark affected conclusions stale and reassess if it changed. No findings means none found within the stated scope, not guaranteed correctness.
 
+Consume the task/ticket and acceptance criteria already established by ODD and the checks already observed by verification. Keep evidence tied to its actual candidate and environment. A receipt distinguishes acceptance gaps, actionable findings, and checks not performed. Return findings to the affected unit; a correction requires rechecking changed surfaces rather than restarting all skills. Pass candidate, receipt, unresolved findings, and next action directly to delivery; do not create a mandatory review file or close a ticket merely because review finished.
+
 Discover Engram operations and save the receipt summary and references without requiring a repository file. Disclose unavailable persistence and return the unsaved receipt. The receipt does not authorize commit, merge, release, or deployment.
+
+For composed work, reuse retrieved context and return the receipt to the coordinating memory owner for a consolidated checkpoint. Standalone saves resolve the workspace/project and use only a bound or successfully registered session if required. Read back uncertain writes before retrying, follow returned conflict handling, and never enable cloud for local memory.

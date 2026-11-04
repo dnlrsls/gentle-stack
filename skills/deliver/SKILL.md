@@ -20,4 +20,10 @@ Use available Git and tracker tools. Preparation-only requests produce drafts. B
 
 Confirm resulting commits, branches, and URLs. Update ticket state only when actual completion and project conventions support it; a PR need not close an issue immediately.
 
+Use the existing work context: ticket, acceptance criteria, candidate, verification results and environment, review receipt if applicable, unresolved findings, and next action. Report acceptance gaps rather than marking them complete. Before closing a ticket, confirm the project's completion rule and actual integration state; draft/open PRs normally remain pending integration. Avoid automatic closing keywords when the PR covers only part of an issue. If policy permits closure at another boundary, cite that policy and evidence.
+
+Creating a commit or rebasing may change candidate identity without changing reviewed content. Do not call an older receipt current solely because tests once passed. Establish equivalence from the reviewed content, base, and relevant environment, or reassess affected checks/review. Preserve the original evidence identity and record why it remains applicable.
+
 Discover Engram operations and save delivery and evidence references, decisions, and remaining work. Disclose unavailable persistence. If remote operations are unavailable, return prepared material and the blocker without claiming publication.
+
+Reuse memory already retrieved during composed work and let one coordinating owner consolidate the delivery checkpoint. Resolve project/session through supported operations; use only bound or registered session IDs. After an uncertain save, read back before retrying, follow returned conflict handling, and never enable cloud to fix local memory.

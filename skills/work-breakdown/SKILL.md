@@ -15,6 +15,8 @@ Split by independently verifiable outcomes or migration boundaries. Keep code, t
 
 Each ticket includes title, outcome, scope and exclusions, relevant references, acceptance criteria, verification approach, and dependencies. Distinguish evidence from assumptions.
 
+Make acceptance criteria observable rather than listing implementation activities. For example, a refactor criterion states that existing inputs retain outputs and error behavior, with the relevant regression checks. Include a completion rule based on repository conventions: implementation and checks, any required review, and integration if required. Do not impose a new tracker state machine.
+
 ## Publish and remember
 
 Use the established tracker. Publish when ticket creation is requested or already authorized; proposal-only requests produce drafts. If the target tracker is ambiguous, prepare drafts before asking the necessary targeted question.
@@ -22,3 +24,5 @@ Use the established tracker. Publish when ticket creation is requested or alread
 Check for equivalent tickets before creation. Retain returned IDs and URLs after every successful write. On partial failure, reconcile remote state and retry only missing units. Link dependencies with supported tracker features or explicit URLs, updating earlier tickets once later URLs exist. Never invent issue numbers.
 
 Return ticket URLs or drafts, execution order, parallel opportunities, and blockers. Save rationale, dependencies, and ticket references in Engram; the tracker owns status. Discover available tools rather than assuming a provider. Disclose unavailable tracker or memory operations and return unpublished or unsaved material explicitly. Ticket creation does not start implementation.
+
+Carry task/ticket identity, acceptance criteria, dependencies, next action, and memory references into execution without a separate planning file. When composing with other skills, reuse retrieved context and let one coordinating agent consolidate memory. Use supported project/session resolution and only registered or bound session IDs; reconcile identity errors before a known-failed write is retried. Read back uncertain writes and handle returned conflicts without duplicating saved observations. Local Engram needs no cloud configuration.

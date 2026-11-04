@@ -18,7 +18,7 @@ Each skill should have a clear responsibility, explicit instructions, and the su
 
 ## Project status
 
-The first eight instruction-based skills are available. They are adapted workflows, not a drop-in replacement for Gentle AI's native RDD engine. Structural validation does not establish behavioral quality or cross-agent compatibility; real-world evaluation is ongoing.
+The v0.2 iteration of eight instruction-based skills is available, with shared work context, consolidated memory ownership, ticket completion rules, and optional reproducible candidate helpers. They are adapted workflows, not a drop-in replacement for Gentle AI's native RDD engine. See the [evaluation record](evaluations/v0.2.md) for observed results and limits. Cross-agent evaluation is still pending; v0.2 is an iteration label, not a packaged release.
 
 ## Skills
 
@@ -74,6 +74,28 @@ Expected output: an implemented change, observed checks, and explicit remaining 
 Share task identity, requirements, candidate identity, evidence, and next actions as needed. Reuse existing context rather than creating a document at every boundary. Engram stores decisions, learning, and references; the tracker owns ticket status; Git owns code versions; executed checks establish observed results. Reconcile memory with these sources before relying on it.
 
 ODD can explore and verify directly. RDD evaluates a specific candidate and its evidence; it does not replace behavioral checks. Changed candidates require reassessing affected evidence. Actual reviewer independence and immutable snapshots require tools that provide those properties.
+
+Pass only the relevant work context: task/ticket, acceptance criteria, candidate, observed evidence and environment, unresolved findings, next action, and Engram references. Keep it in existing conversation, tickets, or memory; no new file is required. One coordinating agent consolidates durable memory updates. A skill switch alone does not trigger another memory read or write.
+
+Local Engram is sufficient. Resolve project and session through supported integration operations, register a session only when necessary, and confirm writes. Uncertain saves are read back before retry; saved observations with incomplete conflict detection are not saved again. Do not enable cloud to repair local memory access.
+
+Verification and review each bundle an optional, standalone [candidate helper](skills/rdd/scripts/candidate.py):
+
+```text
+python <skill-directory>/scripts/candidate.py --repo <project-directory> --base <review-base>
+```
+
+It needs Python 3 and Git. Reuse the returned resolved base commit and compare fingerprints before and after checks. It captures the index and tracked/non-ignored untracked working files, but not ignored inputs or execution environments. It refuses submodules instead of returning incomplete identity. See [coverage and limitations](skills/rdd/references/candidate.md). Neither the helper nor another skill is required to read or use these instructions.
+
+For ticketed work, acceptance, review, and integration follow the project's existing completion policy. Opening a PR does not automatically close its ticket.
+
+## Validation
+
+```text
+python -m unittest discover -s tests -v
+```
+
+These disposable-repository tests validate candidate-helper behavior. The [evaluation record](evaluations/v0.2.md) separately describes the refactor, evidence invalidation, and local Engram recovery exercises; they were author-directed, not independent agent trials.
 
 ## Initial roadmap
 

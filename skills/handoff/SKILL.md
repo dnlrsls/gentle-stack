@@ -20,4 +20,8 @@ Use the host's delegation mechanism only when supported and authorized. Check re
 
 The initiating agent owns integration. On return, inspect changes and evidence and check combined behavior as needed. Worker completion does not itself establish acceptance.
 
+Preserve the compact work context on return: task/ticket, criteria addressed, candidate, checks with their environment and result, unresolved findings, and next action. Reuse valid received evidence rather than rerunning exploration or tests simply because ownership changed. Explain applicability if the integrated candidate differs.
+
 Discover Engram operations and save ownership, transfer references, decisions, and integration outcome. Mark pending transfers as pending. If persistence is unavailable, return an explicitly unsaved continuation record. Never claim independence without an actual separate executor.
+
+The initiating agent normally owns memory consolidation. Workers return durable learning and any memory IDs already written; do not make both sides save the same handoff. Resolve project and session through supported operations, use only bound or registered session IDs, and read back uncertain writes before retrying. Handle returned conflicts and disclose unresolved detection. Do not enable cloud for local memory.

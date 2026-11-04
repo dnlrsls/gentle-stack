@@ -13,3 +13,5 @@ Resolve the question relevant to the requested outcome. Keep investigation read-
 4. Stop when the question is resolved or a concrete evidence gap prevents further progress. Return the answer, evidence, likely change surfaces, constraints, and consequential unknowns.
 
 Save durable discoveries and source references in Engram. Use the available memory integration without assuming tool names. Exclude secrets and bulk logs. If memory is unavailable, return an explicitly unsaved summary; never claim persistence. No graph service or subagent is required.
+
+In a composed task, reuse relevant context already retrieved and return discoveries to its coordinating memory owner instead of creating a second checkpoint. Carry task identity, evidence locations, uncertainties, and the next action directly to the consumer. For a standalone save, resolve the workspace/project and use a bound or successfully registered session if required. Read back uncertain writes before retrying and follow returned conflict handling. Never enable cloud to repair local memory access.

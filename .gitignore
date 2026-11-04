@@ -10,3 +10,7 @@ Desktop.ini
 
 # Local logs
 *.log
+
+# Python helper/test caches
+__pycache__/
+*.pyc
